@@ -48,11 +48,11 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
       - name: Etiquetar con formato DockerHub
-        run:
+        run: |
           docker tag p2gps/web ${{ secrets.DOCKERHUB_USERNAME }}/p2gps:web
           docker tag p2gps/order ${{ secrets.DOCKERHUB_USERNAME }}/p2gps:order
       - name: Push a DockerHub
-        run:
+        run: |
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/p2gps:order
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/p2gps:web
           
